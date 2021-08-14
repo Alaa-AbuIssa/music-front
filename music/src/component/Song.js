@@ -10,33 +10,26 @@ export class Album extends Component {
         }
     }
 
-
-        render() {
-            return (
-
-                <>
-                    <Modal.Dialog >
-                        <Modal.Header closeButton>
-                            <Modal.Title>Artist Songs</Modal.Title>
-                        </Modal.Header>
-
-                        {this.props.actSongs.map(song =>
-                            <Modal.Body>
-                                <div>{song.song_name}</div>
-                            </Modal.Body>
-
-                        )}
-                        <Modal.Footer>
-                            <Button onClick={() => { this.props.closeSong()}}  variant="secondary">Close</Button>
-                        </Modal.Footer>
-                    </Modal.Dialog>
-
-
-                </>
-
-            )
-        }
+    render() {
+        return (
+            <>
+                <Modal.Dialog >
+                    <Modal.Header closeButton>
+                        <Modal.Title>Artist Songs</Modal.Title>
+                    </Modal.Header>
+                    {this.props.actSongs.map(song =>
+                        <Modal.Body>
+                            <div>{song.song_name}</div>
+                        </Modal.Body>
+                    )}
+                    <Modal.Footer>
+                        <Button onClick={() => { this.props.closeSong() }} variant="secondary">Close</Button>
+                    </Modal.Footer>
+                </Modal.Dialog>
+            </>
+        )
     }
+}
 
 
-    export default Album;
+export default Album;

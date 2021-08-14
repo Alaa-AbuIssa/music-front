@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Card, Button,Row,Col } from 'react-bootstrap';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import Album from './component/Album'
 import Song from './component/Song'
-
 import './App.css';
 
 
@@ -26,15 +25,15 @@ class App extends Component {
 
   closeAlbum = () => {
     this.setState({
-        showAlbums:false
+      showAlbums: false
     })
-}
+  }
 
   closeSong = () => {
     this.setState({
-        showSongs:false
+      showSongs: false
     })
-}
+  }
 
   componentDidMount() {
     this.api()
@@ -58,67 +57,63 @@ class App extends Component {
     })
   }
 
-  showAlbum(id) {
-    let albums = []
 
+  showAlbum(id) {
+    let albums = [];
     albums = this.state.albums.filter(album => {
       return album.artist_id === id
     })
     this.setState({
       actAlbums: albums,
-      showAlbums:true
+      showAlbums: true
     })
-    console.log("albuuum",albums)
+    console.log(albums)
   }
 
 
   showSong(id) {
-    let songs = []
+    let songs = [];
 
     songs = this.state.songs.filter(song => {
-      return song.album_id === id
+      return song.album_id.artist_id === id
     })
     this.setState({
       actSongs: songs,
-      showSongs:true
+      showSongs: true
     })
-    console.log("sooong",songs)
+    console.log(songs)
   }
-
 
   render() {
     const artists = this.state.artists;
     console.log('data', this.state)
     return (
-      
-<>
+      <>
         <Row xs={1} md={3} className="g-4">
           {artists.map(artist =>
-          
+
             <Col>
-              <Card style={{width:'18rem' ,height:'18rem'}}>
-                <Card.Img style={{width:'18rem' ,height:'18rem'}} variant="top" src={artist.artist_image_URL} />
+              <Card style={{ width: '18rem', height: '18rem' }}>
+                <Card.Img style={{ width: '18rem', height: '18rem' }} variant="top" src={artist.artist_image_URL} />
                 <Card.Body>
                   <Card.Title>{artist.artist_name}</Card.Title>
                   <Card.Text>
-                  Age : {artist.artist_age}
+                    Age : {artist.artist_age}
                   </Card.Text>
                   <Card.Text>
-                 Nationality : {artist.artist_nationality}
+                    Nationality : {artist.artist_nationality}
                   </Card.Text>
                 </Card.Body>
-              <Button onClick={() => { this.showAlbum(artist.id) }} variant="primary">Show Albums</Button>{' '}
-              <Button onClick={() => { this.showSong(artist.id) }} variant="danger">Show Songs</Button>{' '}
+                <Button onClick={() => { this.showAlbum(artist.id) }} variant="primary">Show Albums</Button>{' '}
+                <Button onClick={() => { this.showSong(artist.id) }} variant="danger">Show Songs</Button>{' '}
               </Card>
             </Col>
           )}
-          </Row>
-          {this.state.showAlbums &&  <Album actAlbums={this.state.actAlbums} closeAlbum={this.closeAlbum}/>}
-          {this.state.showSongs &&  <Song actSongs={this.state.actSongs} closeSong={this.closeSong} /> }
-         
+        </Row>
+        {this.state.showAlbums && <Album actAlbums={this.state.actAlbums} actSongs={this.state.songs} closeAlbum={this.closeAlbum} />}
+        {this.state.showSongs && <Song actSongs={this.state.actSongs} closeSong={this.closeSong} />}
 
-  </>       
-
+      </>
     )
   }
 }
@@ -131,8 +126,8 @@ export default App;
 
 
 
-       
-    
+
+
 
 
 
