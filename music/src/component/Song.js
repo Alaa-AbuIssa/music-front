@@ -19,7 +19,7 @@ export class Album extends Component {
                     </Modal.Header>
                     {this.props.actSongs.map(song =>
                         <Modal.Body>
-                            <div>{song.song_name}</div>
+                            <div>{song.song_name} from --> {song.album_id.albums_name} Album</div>
                         </Modal.Body>
                     )}
                     <Modal.Footer>
