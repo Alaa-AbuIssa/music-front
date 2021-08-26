@@ -1,4 +1,137 @@
-h1{
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+h1 {
   text-align: center !important;
 }
 
+.header {
+  background-color: #fff !important;
+  box-shadow: none !important;
+}
+
+.logo {
+  width: 100px;
+}
+
+.profile {
+  width: 50px;
+}
+
+.hero {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    351deg,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(213, 6, 6, 1) 77%,
+    rgba(255, 7, 7, 1) 100%,
+    rgba(240, 29, 29, 1) 100%
+  );
+  height: 25rem;
+  padding: 2rem;
+  font-family: 'Bebas Neue';
+  font-size:xx-large;
+  color: #fff;
+  
+
+}
+.left {
+  position: relative;
+  top:5rem;
+  left:8rem;
+  float: left;
+  height: 100%;
+  width: 40%;
+  text-align: left;
+}
+
+.logo-left{
+  width: 8rem;
+  position: relative;
+  right: 2rem;
+}
+
+
+.right {
+  float: right;
+  height: 100%;
+  width: 50%;
+}
+
+.body {
+  position: relative;
+  font-family: 'Bebas Neue';
+  left: 10rem;
+  top:5rem;
+  background-color: #fff;
+  height: 22rem;
+}
+
+#get-prod{
+  font-size: xx-large;
+}
+
+#pick{
+  font-size: medium;
+  font-weight:600;
+}
+
+#start{
+  color: red;
+  font-weight: 500;
+}
+
+.footer {
+  position: relative;
+  font-family: 'Bebas Neue';
+  background-color: black;
+  height: 15rem;
+}
+
+.nav-fot {
+  position: relative !important;
+  bottom: -1rem;
+}
+
+p {
+  font-family: 'Bebas Neue';
+  font-size: small;
+  display: inline-block !important;
+  margin-right: 2rem !important;
+}
+
+.copy-right {
+  font-size: small;
+  display: inline-block !important;
+  margin-right: 5rem !important;
+}
+
+.logo-foot {
+  position: relative;
+  top: 3rem;
+  left: 5rem;
+  width: 100px;
+}
+
+.bar {
+  background-color: black !important;
+}
+
+.info {
+  position: relative;
+  display: block;
+  left: 20rem;
+  top: 0rem;
+  height: fit-content;
+  width: fit-content;
+  color: #fff;
+}
+
+.about {
+  margin-left: 4rem;
+  font-family: 'Bebas Neue';
+
+}
+
+.btn{
+  color:#fff;
+}
