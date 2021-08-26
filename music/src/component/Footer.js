@@ -34,7 +34,7 @@ export default function Footer() {
                 <p>MUSIC</p>
             </div>
 
-            <div className={classes.root} className="nav-fot">
+            <div className={classes.root} >
                 <AppBar position="static" className="bar" >
                     <Toolbar>
                         <Typography variant="h6" className={classes.title}>
